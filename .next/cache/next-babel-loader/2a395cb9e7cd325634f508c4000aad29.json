@@ -1,1 +1,0 @@
-{"ast":null,"code":"var __jsx = React.createElement;\nimport React from \"react\";\n\nvar Index = function Index() {\n  return __jsx(\"div\", null, \"Your Next.js App\");\n};\n\nexport default Index;","map":null,"metadata":{},"sourceType":"module"}
