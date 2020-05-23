@@ -1,1 +1,10 @@
-Main
+nextjs
+d3js
+
+
+react hooks and context store
+night and day theme(context)
+
+rest api firebase axios
+
+dont need redux
