@@ -6,5 +6,6 @@ react hooks and context store
 night and day theme(context)
 
 rest api firebase axios
+firebase firestore
 
 dont need redux
