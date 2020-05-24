@@ -9,10 +9,11 @@ import Header from "../components/header/Header";
 
 const Start = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>Образовательный центр</title>
       </Head>
+
       <Header />
       <CenteredSection>
         <h1>Добро пожаловать!</h1>
@@ -32,14 +33,14 @@ const Start = () => {
           <Link href="/login">
             <DefaultButton text="Войти" />
           </Link>
-          <Link href="/login">
+          <Link href="/register">
             <DefaultButton primary text="Регистрация" />
           </Link>
         </ButtonsWrap>
       </CenteredSection>
 
       <Footer> developed by Nurlykhan, 2020</Footer>
-    </div>
+    </>
   );
 };
 

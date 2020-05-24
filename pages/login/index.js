@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
-import Router from "next/router";
+import React from "react";
 
 function Login() {
-  useEffect(() => {}, []);
   return <>Login</>;
 }
 
