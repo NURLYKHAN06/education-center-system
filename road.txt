@@ -2,10 +2,11 @@ nextjs
 d3js
 
 
-react hooks and context store
-night and day theme(context)
+react hooks,
+night and day theme(context, useDispatch)
+redux-saga
 
-rest api firebase axios
+rest api firebase axios(auth)
 firebase firestore
 
-dont need redux
+i18n

@@ -16,7 +16,7 @@ export default class MyDocument extends Document {
     const styleTags = sheet.getStyleElement();
 
     // Step 4: Pass styleTags as a prop
-    return { ...page, styleTags, style };
+    return { ...page, styleTags };
   }
 
   render() {

@@ -3,12 +3,17 @@ import styled from "styled-components";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import { Link as A } from "office-ui-fabric-react";
+import { Pane } from "evergreen-ui";
 
 // UserContext
 let user = false;
 
 const menuData = [
+  {
+    title: "Главная",
+    path: "/",
+    ifUserLogged: true,
+  },
   {
     title: "Войти",
     path: "/login",
@@ -33,31 +38,28 @@ const menuData = [
 
 const Header = () => {
   const router = useRouter();
-
   return (
-    <HeaderContainer>
-      <p>Logo</p>
-      <nav>
-        {menuData.map((menu) => {
-          const { path, title, ifUserLogged } = menu;
-          // Check user context
-          if (!!user && !ifUserLogged) return null;
-
-          return (
-            <Link href={path} key={path}>
-              <A disabled={router.pathname === path}>{title}</A>
-            </Link>
-          );
-        })}
-      </nav>
-    </HeaderContainer>
+    <HeaderWrap>
+      {menuData.map((menu) => {
+        const { path, title, ifUserLogged } = menu;
+        // Check user context
+        if (!!user && !ifUserLogged) return null;
+        return (
+          <Link href={path} key={path}>
+            <a className={router.pathname === path ? "non-active" : ""}>
+              {title}
+            </a>
+          </Link>
+        );
+      })}
+    </HeaderWrap>
   );
 };
 
-// styles
-const HeaderContainer = styled.header`
-  border: 1px solid red;
+const HeaderWrap = styled.header`
+  display: flex;
   height: 80px;
+  border: 1px solid red;
 `;
 
 export default Header;
