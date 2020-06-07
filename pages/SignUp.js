@@ -1,9 +1,7 @@
 import React from "react";
 import Head from "next/head";
 
-import { Card } from "@fluentui/react/cards";
-
-import Header from "../components/header/Header";
+import Header from "../components/Header";
 
 function Login() {
   return (
@@ -11,8 +9,6 @@ function Login() {
       <Head>
         <title>Регистрация</title>
       </Head>
-
-      <Card />
 
       <Header />
     </>
