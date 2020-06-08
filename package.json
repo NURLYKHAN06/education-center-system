@@ -5,6 +5,7 @@
   "dependencies": {
     "cra-template": "1.0.3",
     "evergreen-ui": "^4.27.4",
+    "formik": "^2.1.4",
     "next": "^9.4.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

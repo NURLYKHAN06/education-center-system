@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import { Pane, Select } from "evergreen-ui";
+import { WidthWrap } from "../../styles/GlobalStyles";
 
 // UserContext
 let user = false;
@@ -18,12 +19,12 @@ const MenuItems = () => {
     },
     {
       title: "Sign in",
-      path: "/signin",
+      path: "/sign-in",
       ifUserLogged: false,
     },
     {
       title: "Sign up",
-      path: "/signup",
+      path: "/sign-up",
       ifUserLogged: false,
     },
     {
@@ -53,7 +54,8 @@ const MenuItems = () => {
 const Header = (props) => {
   return (
     <HeaderWrap>
-      <div>
+      <WidthWrap>
+        <Logo />
         <MenuItems />
         <Select>
           <option value="Eng" defaultValue="Eng">
@@ -61,15 +63,20 @@ const Header = (props) => {
           </option>
           <option value="Rus">Rus</option>
         </Select>
-      </div>
+      </WidthWrap>
     </HeaderWrap>
   );
 };
 
 const HeaderWrap = styled.header`
   display: flex;
-  height: 80px;
   border: 1px solid red;
+`;
+
+const Logo = styled.div`
+  width: 80px;
+  height: 80px;
+  background: red;
 `;
 
 export default Header;

@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Button } from "evergreen-ui";
 
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Start = () => {
   return (
@@ -15,12 +16,14 @@ const Start = () => {
       <Header />
       <h2>Start words</h2>
       <p>Some description</p>
-      <Link href="/signin">
+      <Link href="/sign-in">
         <Button>Sign in</Button>
       </Link>
-      <Link href="signup">
+      <Link href="sign-up">
         <Button appearance="primary">Sign up</Button>
       </Link>
+
+      <Footer />
     </>
   );
 };

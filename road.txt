@@ -1,7 +1,3 @@
-nextjs
-d3js
-
-
 react hooks,
 night and day theme(context, useDispatch)
 redux-saga
@@ -9,4 +5,8 @@ redux-saga
 rest api firebase axios(auth)
 firebase firestore
 
+
+after:
 i18n
+d3js
+typescript

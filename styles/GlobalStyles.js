@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 html,
@@ -31,4 +31,10 @@ a{
     color: #313131;
   }
 }
+`;
+
+export const WidthWrap = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 `;
