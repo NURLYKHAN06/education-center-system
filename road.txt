@@ -5,8 +5,32 @@ redux-saga
 rest api firebase axios(auth)
 firebase firestore
 
+1) register as school
+2) register as student
+
+3) sign in
+
+SCHOOL
+1) my created tasks
+2) create task with questions with variants
+3) my students statistic
+4) my task statistic
+5) tasks only with text
+6) tasks only one choice
+
+STUDENT
+1) subscribed schools
+2) tasks by time with lazy
+3) my finished tasks
+4) start task
+
+
 
 after:
+Start landing
+timer for questions
+Multichoice
+Picture choice questions
 i18n
 d3js
 typescript
