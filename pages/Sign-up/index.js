@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import { useFormik } from "formik";
+import { connect } from "react-redux";
 
 import Header from "../../components/Header";
 import { Select, TextInputField, Button } from "evergreen-ui";
@@ -37,7 +38,7 @@ const validate = (values) => {
   return errors;
 };
 
-function SignUp() {
+function SignUp({ a }) {
   const [userType, setUserType] = useState("student");
   const handleChangeUserType = ({ target }) => setUserType(target.value);
 
@@ -52,6 +53,10 @@ function SignUp() {
     onSubmit: (values) => {
       createUser(values);
     },
+  });
+
+  useEffect(() => {
+    console.log(a);
   });
   return (
     <>
@@ -117,4 +122,8 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+const mapState = (state) => {
+  return { a: state.user };
+};
+
+export default connect(mapState)(SignUp);

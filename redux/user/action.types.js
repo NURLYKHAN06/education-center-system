@@ -1,0 +1,2 @@
+export const CREATE_USER_START = "CREATE_USER_START";
+export const CREATE_USER = "CREATE_USER";
