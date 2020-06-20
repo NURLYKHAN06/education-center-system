@@ -1,44 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import { useFormik } from "formik";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 
 import Header from "../../components/Header";
 import { Select, TextInputField, Button } from "evergreen-ui";
 
-import { auth } from "../../backend/config";
-import { createUser } from "../../backend/api_user";
+import { createUserStart } from "../../redux/user/actions";
+import { validate } from "./validate";
 
-const validate = (values) => {
-  const errors = {};
-  if (!values.email) {
-    errors.email = "Required";
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = "Invalid email address";
-  }
+function SignUp({ loginBtnLoader }) {
+  const dispatch = useDispatch();
 
-  if (!values.fullname) {
-    errors.fullname = "Required";
-  } else if (!(values.fullname.length > 2 && values.fullname.length < 16)) {
-    errors.fullname = "Must be from 3 characters till 15";
-  }
-
-  if (!values.password) {
-    errors.password = "Required";
-  } else if (!(values.password.length > 4)) {
-    errors.password = "Must be 5 or more than 5 characters";
-  }
-
-  if (!values.confirmPassword) {
-    errors.confirmPassword = "Required";
-  } else if (!(values.confirmPassword === values.password)) {
-    errors.confirmPassword = "Passwords must match";
-  }
-
-  return errors;
-};
-
-function SignUp({ a }) {
   const [userType, setUserType] = useState("student");
   const handleChangeUserType = ({ target }) => setUserType(target.value);
 
@@ -51,13 +24,10 @@ function SignUp({ a }) {
     },
     validate,
     onSubmit: (values) => {
-      createUser(values);
+      dispatch(createUserStart(values));
     },
   });
 
-  useEffect(() => {
-    console.log(a);
-  });
   return (
     <>
       <Head>
@@ -116,14 +86,16 @@ function SignUp({ a }) {
           validationMessage={formik.errors.confirmPassword}
         />
 
-        <Button type="submit">Submit</Button>
+        <Button type="submit" isLoading={loginBtnLoader}>
+          Submit
+        </Button>
       </form>
     </>
   );
 }
 
-const mapState = (state) => {
-  return { a: state.user };
-};
+const mapState = (state) => ({
+  loginBtnLoader: state.loader.loginBtnLoader,
+});
 
 export default connect(mapState)(SignUp);
